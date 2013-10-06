@@ -1,1 +1,1 @@
-YO. ADB versioni 1.
+YO. ADB version 1.
