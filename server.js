@@ -3,7 +3,6 @@ var app = require('./app.js');
 var debug = require('debug')('adb');
 
 app.set('ipaddress', process.env.OPENSHIFT_NODEJS_IP);
-        self.port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
         if (typeof app.ipaddress === "undefined") {
             //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
@@ -21,5 +20,5 @@ app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080);
 
 var server = app.listen(app.port, app.ipaddress, function() {
             console.log('%s: Node server started on %s:%d ...',
-                        Date(Date.now() ), self.ipaddress, self.port);
+                        Date(Date.now() ), app.ipaddress, app.port);
         });
