@@ -3,7 +3,7 @@ var app = require('./app.js');
 var debug = require('debug')('adb');
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
-if (typeof app.ipaddress === "undefined") {
+if (typeof ipaddress === "undefined") {
     //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
     //  allows us to run/test the app locally.
     console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');
