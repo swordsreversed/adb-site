@@ -1,0 +1,84 @@
+html {
+  background: url(/img/soft-stretch.jpg) no-repeat top left fixed;
+  background-size: cover;
+  height:100%;
+}
+
+body {
+    background: transparent;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #333;
+    height: 100%;
+    font-size: 12px;
+    color: rgb(217, 40, 40);
+}
+
+header {
+	min-height: 500px;
+}
+
+a {
+	text-decoration: underline;
+	color: rgb(217, 40, 40);
+}
+
+a:hover {
+	color: blue;
+}
+#logobox {
+	padding-right: 10px;
+  float: right;
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -130px;
+  }
+
+footer {
+    height: 140px;
+}
+
+.left {
+	padding: 10px;
+	float: left;
+}
+
+.right {
+	padding: 10px;
+	float: right;
+	text-align: right;
+}
+
+h1, h3 {
+    color: rgb(217, 40, 40);
+    font-size: 12px;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left:  0;
+}
+
+.main {
+  margin-right: 200px;
+  width: 550px;
+}
+.content {
+    width:500px;
+    white-space: nowrap;
+    overflow: auto;
+    overflow-y: hidden;
+    font-size: 1.8rem;
+    height: 140px;
+    text-align: left;
+}
+.main h1 {
+  font-size: 3rem;
+}
+
+
+/*# sourceMappingURL=styles.css.map */

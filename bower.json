@@ -1,0 +1,23 @@
+{
+  "name": "ser-express",
+  "version": "0.0.1",
+  "authors": [
+    "Damon Black <damon.black@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "BigVideo.js": "~1.0.9",
+    "imagesloaded": "~3.1.5",
+    "js-base64": "~2.1.5",
+    "screenfull": "~1.2.1",
+    "bootstrap": "~3.1.1",
+    "jquery-backstretch": "~2.0.4"
+  }
+}
