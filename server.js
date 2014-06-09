@@ -10,7 +10,7 @@ if (typeof app.ipaddress === "undefined") {
     ipaddress = "127.0.0.1";
 };
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var port = process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || 8080; 
 
 // var server = app.listen(app.get('port'), function() {
 // 	console.log('we on bish');
