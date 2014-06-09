@@ -92,7 +92,7 @@ gulp.task('listen', function() {
 });
 
 gulp.task('serve', function () {
-  nodemon({ script: 'bin/www', watch: ['./client/**'],  })
+  nodemon({ script: 'server.js', watch: ['./client/**'],  })
     .on('restart', function() {
     	// there doesn't seem to be a way to trigger a livereload event outside
     	// of .pipe() and we have no way to capture the files that caused the nodemon restart (i think)
