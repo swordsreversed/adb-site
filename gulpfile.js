@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-	sass = require('gulp-sass'),
+	//sass = require('gulp-sass'),
 	autoprefixer = require('gulp-autoprefixer'),
 	minifycss = require('gulp-minify-css'),
 	jshint = require('gulp-jshint'),
@@ -17,14 +17,12 @@ var gulp = require('gulp'),
 	fs = require('fs'),
 	server = lr();
 
-	var source = require('vinyl-source-stream');
-	var watchify = require('watchify');
-	var concat = require('gulp-concat-sourcemap');
-	var bower = require('wiredep')({
-    //options, like ignores...
-});
+var source = require('vinyl-source-stream');
+var watchify = require('watchify');
+var concat = require('gulp-concat-sourcemap');
+var bower = require('wiredep')({});
 
-	var lrport = 35729;
+var lrport = 35729;
 
 
 gulp.task('styles', function() {
@@ -99,7 +97,7 @@ gulp.task('serve', function () {
     	// SO: crappy hack to send out notification that server files have changed - write to a
     	// file included in a watch task
     	setTimeout(function() {
-        fs.writeFileSync('views/rebooted', 'rebooted');
+        	fs.writeFileSync('views/rebooted', 'rebooted');
       }, 1000)
     })
 });

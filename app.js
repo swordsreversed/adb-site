@@ -27,8 +27,6 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
 // use routes
 app.use('/', routes);
 app.use('/new1', new1);
@@ -36,36 +34,32 @@ app.use('/new2', new2);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+		var err = new Error('Not Found');
+		err.status = 404;
+		next(err);
 });
 
-/// error handlers
-
-// development error handler
-// will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error.handlebars', {
-            message: err.message,
-            error: err
-        });
-    });
-    app.use(require('connect-livereload')({port: 35729}));
-    var debug = require('debug')('adb');
-    console.log('dev');
+		app.use(function(err, req, res, next) {
+				res.status(err.status || 500);
+				res.render('error.handlebars', {
+						message: err.message,
+						error: err
+				});
+		});
+		var debug = require('debug')('adb');
+		console.log('dev');
+		app.use(require('connect-livereload')({port: 35729}));
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
+		res.status(err.status || 500);
+		res.render('error', {
+				message: err.message,
+				error: {}
+		});
 });
 
 

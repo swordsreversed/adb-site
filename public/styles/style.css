@@ -65,7 +65,7 @@ ul {
 
 .main {
   margin-right: 200px;
-  width: 650px;
+  width: 570px;
 }
 
 .content {
@@ -76,10 +76,12 @@ ul {
   font-size: 1.8rem;
   height: 140px;
   text-align: left;
+  margin-left: 20px;
 }
 
 .main h1 {
   font-size: 2rem;
+  font-weight: normal;
 }
 
 .footer {
@@ -102,4 +104,12 @@ ul {
   height: 140px;
   text-align: right;
   float: right;
+}
+
+.underline {
+  text-decoration:underline;
+}
+
+#image__hider {
+  display: none;
 }
