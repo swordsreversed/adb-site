@@ -15,11 +15,6 @@ if (app.get('env') === 'development') {
 	var port = 4000;
 }
 
-// var server = app.listen(app.get('port'), function() {
-// 	console.log('we on bish');
-// 	debug('Express server listening on port ' + server.address().port);
-// })
-
 var server = app.listen(port, ipaddress, function() {
     console.log('%s: Node server started on %s:%d ...',
                 Date(Date.now() ), ipaddress, port);
