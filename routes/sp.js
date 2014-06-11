@@ -1,12 +1,10 @@
-'use strict';
-
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET home page. */
 router.route('/')
 	.get(function(req, res) {
-	  res.render('user', { title: 'Express', message: 'liz thicc = )' });
+	  res.render('sp.handlebars', { title: 'ADB - Soft Power' });
 	});
 
 module.exports = router;

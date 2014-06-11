@@ -15,6 +15,12 @@
   "dependencies": {
     "imagesloaded": "~3.1.5",
     "bootstrap": "~3.1.1",
-    "jquery-backstretch": "~2.0.4"
+    "jquery-backstretch": "~2.0.4",
+    "vimeowrap.js": "https://github.com/luwes/vimeowrap.js.git"
+  },
+  "overrides": {
+    "vimeowrap.js": {
+        "main": "./vimeowrap.js"
+    }
   }
 }

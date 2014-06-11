@@ -1,7 +1,8 @@
 'use strict';
 
+var title = document.getElementsByTagName("title")[0].innerHTML;
 var hoverLink = '';
-var elem = document.querySelector('#image__hider');
+var elem = document.querySelector('.image__hider');
 var bimgs = [];
 
 function flashADB(){
@@ -28,31 +29,49 @@ function flashADB(){
 
 $(function() {
 
-	$.backstretch("/images/soft-stretch.jpg");
+	if (title == 'ADB - Soft Power') {
 
-	$('.linx li a').hover(
-		function() {
-			hoverLink = $(this).html();
-			$(this).html( $( '<a href=' + $(this).attr('href') + ' target="_blank"> ' + $(this).attr('name') + ' </span>' ) );
-		}, function() {
-			$(this).html(hoverLink);
-			hoverLink = '';
-		}
-	);
+		$.backstretch("/images/soft-stretch.jpg");
 
+		$('.linx li a').hover(
+			function() {
+				hoverLink = $(this).html();
+				$(this).html( $( '<a href=' + $(this).attr('href') + ' target="_blank"> ' + $(this).attr('name') + ' </span>' ) );
+			}, function() {
+				$(this).html(hoverLink);
+				hoverLink = '';
+			}
+		);
 
-	var imgLoad = imagesLoaded(elem);
-	imgLoad.on( 'always', function() {
-		console.log( imgLoad.images.length + ' images loaded' );
-		// detect which image is broken
-		for ( var i = 0, len = imgLoad.images.length; i < len; i++ ) {
-			var image = imgLoad.images[i];
-			bimgs.push(image.img.src);
-			var result = image.isLoaded ? 'loaded' : 'broken';
-			console.log( 'image is ' + result + ' for ' + image.img.src );
-		}
-		flashADB();
-	});
+		var imgLoad = imagesLoaded(elem);
+		imgLoad.on( 'done', function() {
+			for ( var i = 0, len = imgLoad.images.length; i < len; i++ ) {
+				var image = imgLoad.images[i];
+				bimgs.push(image.img.src);
+			}
+			flashADB();
+		});
+	}
+
+	if (title == 'ADB') {
+
+		var imgLoad = imagesLoaded(elem);
+		imgLoad.on( 'done', function() {
+			for ( var i = 0, len = imgLoad.images.length; i < len; i++ ) {
+				var image = imgLoad.images[i];
+				bimgs.push(image.img.src);
+			}
+			var min=0, max=bimgs.length-1;
+			var rn =  Math.floor(Math.random() * (max - min + 1) + min);
+			$.backstretch(bimgs[rn]);
+		});
+
+		vimeowrap('player').setup({
+        urls: [
+            'http://vimeo.com/87974690'
+        ]
+    });
+	}
 
 });
 
