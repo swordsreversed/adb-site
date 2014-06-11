@@ -12,6 +12,7 @@ var sp = require('./routes/sp');
 
 var app = express();
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -19,12 +20,13 @@ app.set('view engine', 'hbs');
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
-app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // use routes
 app.use('/', routes);
@@ -45,9 +47,11 @@ if (app.get('env') === 'development') {
 				error: err
 		});
 	});
+	app.use(logger('dev'));
 	var debug = require('debug')('adb');
 	console.log('dev');
 	app.use(require('connect-livereload')({port: 35729}));
+	
 }
 
 // production error handler

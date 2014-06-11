@@ -36,7 +36,7 @@ gulp.task('styles', function() {
 	.pipe(livereload(server))
 });
 
-gulp.task('scripts', function() {
+gulp.task('routes', function() {
 	return gulp.src('routes/*.js')
 	.pipe(jshint('.jshintrc'))
 	.pipe(jshint.reporter('jshint-stylish'))
@@ -53,7 +53,7 @@ gulp.task('script', function() {
 gulp.task('libs', function() {
 	gulp.src(bower.js)
 		 .pipe(concat('libs.js'))
-		 //.pipe(uglify('libs.js'))
+		 .pipe(uglify('libs.js'))
 		 .pipe(gulp.dest('public/js'));
 });
 
@@ -77,7 +77,7 @@ gulp.task('clean', function() {
 gulp.task('watch', function() {
 	//gulp.watch('styles/*.css', ['styles']);
 	// server
-	gulp.watch('routes/*.js', ['scripts']);
+	gulp.watch('routes/*.js', ['routes']);
 	// browser
 	gulp.watch('client/js/index.js', ['script']);
 	//gulp.watch('client/images/**/*', ['images']);
@@ -94,7 +94,7 @@ gulp.task('serve', function () {
 			// there doesn't seem to be a way to trigger a livereload event outside
 			// of .pipe() and we have no way to capture the files that caused the nodemon restart (i think)
 			// SO: crappy hack to send out notification that server files have changed - write to a
-			// file included in a watch task
+			// file included in a watch task - try pm2 or node-supervisor
 			setTimeout(function() {
 					fs.writeFileSync('views/rebooted', 'rebooted');
 			}, 1000)
@@ -102,7 +102,7 @@ gulp.task('serve', function () {
 });
 
 gulp.task('default', ['clean'], function() {
-	gulp.start('styles', 'scripts', 'images', 'serve', 'watch');
+	gulp.start('styles', 'routes', 'images', 'serve', 'watch');
 });
 
 gulp.task('dev', ['clean'], function() {
