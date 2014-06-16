@@ -114,6 +114,24 @@ ul {
   display: none;
 }
 
+.overlay {
+  z-index: 1000;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.enter_overlay {
+  margin:0 auto;
+  width:80px;
+  margin-top:350px;
+}
+
 #player {
   width:100vw;
   height:100vh;

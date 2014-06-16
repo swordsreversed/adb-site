@@ -68,6 +68,7 @@ $(function() {
 		var wh = $(window).height(),
 				ww = $(window).width();
 				$('#player').height(wh).width(ww);
+				$('#overlay').height(wh).width(ww);
 
 		vimeowrap('player').setup({
 				urls: [
