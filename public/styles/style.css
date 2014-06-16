@@ -114,8 +114,8 @@ ul {
   display: none;
 }
 
-.player_middle {
-  margin:0 auto;
-  width:480px;
-  margin-top:150px;
+#player {
+  width:100vw;
+  height:100vh;
 }
+

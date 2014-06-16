@@ -55,22 +55,29 @@ $(function() {
 
 	if (title == 'ADB') {
 
-		var imgLoad = imagesLoaded(elem);
-		imgLoad.on( 'done', function() {
-			for ( var i = 0, len = imgLoad.images.length; i < len; i++ ) {
-				var image = imgLoad.images[i];
-				bimgs.push(image.img.src);
-			}
-			var min=0, max=bimgs.length-1;
-			var rn =  Math.floor(Math.random() * (max - min + 1) + min);
-			$.backstretch(bimgs[rn]);
-		});
+		// var imgLoad = imagesLoaded(elem);
+		// imgLoad.on( 'done', function() {
+		// 	for ( var i = 0, len = imgLoad.images.length; i < len; i++ ) {
+		// 		var image = imgLoad.images[i];
+		// 		bimgs.push(image.img.src);
+		// 	}
+		// 	var min=0, max=bimgs.length-1;
+		// 	var rn =  Math.floor(Math.random() * (max - min + 1) + min);
+		// 	$.backstretch(bimgs[rn]);
+		// });
+		var wh = $(window).height(),
+				ww = $(window).width();
+				$('#player').height(wh).width(ww);
 
 		vimeowrap('player').setup({
-        urls: [
-            'http://vimeo.com/87974690'
-        ]
-    });
+				urls: [
+						'http://vimeo.com/87974690'
+				],
+				height: wh,
+				width: ww,
+				byline: false
+		});
+
 	}
 
 });
