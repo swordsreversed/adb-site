@@ -54,7 +54,10 @@ footer {
 
 h1, h3 {
   color: rgb(217, 40, 40);
-  font-size: 12px;
+}
+
+h1 {
+  font-size: 3rem;
 }
 
 ul {
@@ -135,5 +138,9 @@ ul {
 #player {
   width:100vw;
   height:100vh;
+}
+
+.text-right {
+  padding-right: 20px;
 }
 

@@ -15,8 +15,6 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
-
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -51,7 +49,6 @@ if (app.get('env') === 'development') {
 	var debug = require('debug')('adb');
 	console.log('dev');
 	app.use(require('connect-livereload')({port: 35729}));
-	
 }
 
 // production error handler
