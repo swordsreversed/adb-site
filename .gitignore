@@ -27,3 +27,6 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 /public/components
+.openshift
+.tmp
+
